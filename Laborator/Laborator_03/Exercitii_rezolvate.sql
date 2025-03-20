@@ -44,7 +44,7 @@ SELECT * FROM Student
     where bursa is NULL or bursa=0;     -- nu au bursa
 
 SELECT * FROM Student
-    where bursa is NULL;
+    where bursa is NULL;        -- bursa este necompletata
 
 
 
