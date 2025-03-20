@@ -25,6 +25,13 @@ SELECT
 FROM Student
     where EXTRACT(year from datan) = EXTRACT(year from sysdate) - 20;
 
+SELECT
+    nume,
+    an,
+    datan
+FROM Student
+    WHERE extract(year FROM SYSDATE) - extract(year FROM datan) = 20;
+
 -- Exercitiul 5
 SELECT * FROM Student
     where EXTRACT(month from datan) = EXTRACT(month from sysdate);
@@ -33,7 +40,13 @@ SELECT * FROM Student
 SELECT * FROM Student 
     WHERE TRIM(BURSA) IS NULL OR TRIM(BURSA) = '-';
 
-SELECT * FROM Student WHERE bursa = 0;      -- nu au bursa
+SELECT * FROM Student
+    where bursa is NULL or bursa=0;     -- nu au bursa
+
+SELECT * FROM Student
+    where bursa is NULL;
+
+
 
 -- Exercitiul 7
 SELECT nume, an, nvl(cnp, 'CNP necompletat') as CNP FROM Student
@@ -43,6 +56,13 @@ SELECT nume, an, nvl(cnp, 'CNP necompletat') as CNP FROM Student
 SELECT nume, cnp, an FROM Student where substr(cnp, 1, 1) in ('2', '4', '6');
 SELECT nume, cnp, an FROM Student where substr(cnp, 1, 1) in ('1', '3', '5');
 
+SELECT
+    nume,
+    cnp,
+    an
+FROM Student
+    WHERE cnp LIKE '2%';
+
 -- Exercitiul 9
 SELECT nume, an, 
     CASE 
@@ -50,4 +70,14 @@ SELECT nume, an,
         WHEN substr(cnp, 1, 1) in ('2', '4', '6') THEN 'Fete'
         ELSE 'Nedeterminat'
     END AS grup
+FROM Student;
+
+SELECT
+    nume,
+    an,
+    CASE 
+        WHEN cnp LIKE '2%' THEN 'fete'
+        WHEN cnp LIKE '1%' THEN 'baieti'
+        ELSE 'Others'
+    END as Grup
 FROM Student;

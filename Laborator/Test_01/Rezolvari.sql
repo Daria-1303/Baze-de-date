@@ -23,6 +23,9 @@ SELECT sid, nume FROM Student WHERE an=2;
 SELECT nume, fid FROM Student 
     WHERE extract(YEAR FROM SYSDATE) - extract(YEAR FROM datan) < 21;
 
+SELECT *FROM Student
+    WHERE months_between(SYSDATE, datan) / 12 < 21;
+
 --Poze grile/IMG-20250302-WA0042.jpg
 -- 1 : SAC001	Emanuel Petrescu
 -- 3 : SME002	Grigore Toma
