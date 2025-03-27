@@ -88,14 +88,7 @@ SELECT
     s.nume
 FROM Student s LEFT OUTER JOIN Contract ct
                  ON s.sid = ct.sid
-WHERE ct.sid IS NULL
-ORDER BY s.an, s.nume;
-
-SELECT
-    s.nume
-FROM Student s LEFT OUTER JOIN Contract ct
-                 ON s.sid = ct.sid
-WHERE nrc IS NULL
+WHERE ct.nrc IS NULL
 ORDER BY s.an, s.nume;
 
 -- Exercitiul 7
