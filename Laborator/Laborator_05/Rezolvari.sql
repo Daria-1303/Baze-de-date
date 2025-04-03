@@ -4,6 +4,7 @@ WHERE
     fid = 'AC'
     and
     media < (SELECT media from Student where cnp = '1050404304578');
+
 -- p2
 SELECT
     s.*,
@@ -14,9 +15,12 @@ WHERE s.bursa <= ALL
       (SELECT bursa FROM Student 
        WHERE bursa IS NOT NULL AND bursa != 0) AND f.fid = 'AC';
 
-SELECT DISTINCT bursa FROM Student
-WHERE bursa <= ALL(SELECT bursa FROM Student 
-                   WHERE bursa IS NOT NULL AND bursa <> 0 AND fid = 'AC')  and bursa <> 0;
+
+SELECT DISTINCT
+    bursa,
+    fid
+FROM Student
+WHERE bursa <= ALL(SELECT bursa FROM Student WHERE bursa is NOT NULL and bursa <> 0) and bursa <> 0 and fid = 'AC';
 
 -- p3
 
@@ -37,8 +41,8 @@ FROM Student s1,
     where s1.bursa = s2.bursa AND s1.media = s2.media AND s1.sid <> s2.sid;
 
 
-select * from student s1, (select * from student where bursa = s1.bursa and media = s1.media and sid <> s1.sid);
 
+SELECT s1.* FROM Student s1 WHERE EXISTS (SELECT * FROM Student s2 where s2.bursa = s1.bursa AND s2.media = s1.media AND s2.sid <> s1.sid);
 
 -- p6
 

@@ -11,6 +11,19 @@ FROM Curs
 WHERE (fid = 'AC' or fid = 'ET') AND
                                     zi = (SELECT DISTINCT zi FROM Curs WHERE titlu = 'Fizica');
 
+SELECT
+    titlu,
+    cid,
+    zi
+FROM Curs
+WHERE (fid = 'AC' OR fid = 'ET') AND zi = ANY(SELECT zi FROM Curs WHERE titlu = 'Fizica');
+
+SELECT
+    titlu,
+    cid,
+    zi
+FROM Curs
+WHERE (fid = 'AC' OR fid = 'ET') AND zi IN (SELECT zi FROM Curs WHERE titlu = 'Fizica');
 
 -- Laborator\Test_03_Subquerry\IMG-20250302-WA0018.jpg
 
