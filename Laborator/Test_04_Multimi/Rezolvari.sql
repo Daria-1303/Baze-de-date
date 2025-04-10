@@ -160,3 +160,17 @@ SELECT
     c2.titlu
 FROM Curs c2
 WHERE c2.zi = 'Luni';
+
+-- Laborator\Test_04_Multimi\IMG-20250302-WA0083.jpg
+
+SELECT
+    ct1.nrc,
+    ct1.semestru
+FROM Contract ct1
+WHERE ct1.nota >= 8 
+UNION
+SELECT
+    ct2.nrc,
+    ct2.semestru
+FROM Contract ct2 
+WHERE ct2.semestru = 2;
