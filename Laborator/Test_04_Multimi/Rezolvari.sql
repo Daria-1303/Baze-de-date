@@ -174,3 +174,17 @@ SELECT
     ct2.semestru
 FROM Contract ct2 
 WHERE ct2.semestru = 2;
+
+-- 85
+
+SELECT
+    s1.sid,
+    s1.nume
+FROM Student s1
+WHERE s1.bursa = 0 OR s1.bursa IS NULL
+UNION
+SELECT
+    s2.sid,
+    s2.nume
+FROM Student s2
+WHERE s2.media < 6.5;
