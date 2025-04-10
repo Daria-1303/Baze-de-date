@@ -140,3 +140,23 @@ WHERE s1.media BETWEEN 6 AND 7.8
 
 
 -- Laborator\Test_04_Multimi\IMG-20250302-WA0082.jpg
+
+
+-- CID	TITLU
+-- CRS10	Limbaje de programare
+-- CRS11	Sisteme web
+-- CRS14	Limbaje de asamblare
+-- CRS16	Electrotehnica
+-- CRS20	Sistem expert
+
+SELECT
+    c1.cid,
+    c1.titlu
+FROM Curs c1
+WHERE c1.fid = 'AC'
+MINUS
+SELECT
+    c2.cid,
+    c2.titlu
+FROM Curs c2
+WHERE c2.zi = 'Luni';
