@@ -67,3 +67,25 @@ SELECT
     c2.titlu
 FROM Curs c2 
 WHERE c2.fid IN (SELECT f.fid FROM Facultate f WHERE f.fid IN (SELECT s.fid FROM Student s WHERE s.media >= 9));
+
+
+-- Laborator\Test_04_Multimi\IMG-20250302-WA0016.jpg
+
+-- poza 265 verificare
+
+-- 2 : CRS06	1
+-- 5 : CRS25	2
+
+SELECT
+    c1.cid,
+    c1.an
+FROM Curs c1 JOIN Profesor p
+             ON c1.pid = p.pid
+WHERE p.grad = 'prof'
+MINUS
+SELECT
+    c2.cid,
+    c2.an
+FROM Curs c2 JOIN Facultate f
+             ON c2.fid = f.fid
+WHERE f.fid = 'AC';
