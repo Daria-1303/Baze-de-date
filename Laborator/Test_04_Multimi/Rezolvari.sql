@@ -31,3 +31,21 @@ WHERE p.grad = 'prof';
 
 
 -- Laborator\Test_04_Multimi\IMG-20250302-WA0014.jpg
+
+-- 2 : CRS10	1
+-- 5 : CRS16	1
+SELECT
+    c1.cid,
+    c1.an
+FROM Curs c1 JOIN Facultate f
+             ON c1.fid = f.fid
+WHERE f.fid = 'AC'
+MINUS
+SELECT
+    c2.cid,
+    c2.an
+FROM Curs c2 JOIN Profesor p
+             ON c2.pid = p.pid
+WHERE p.grad = 'conf';
+
+-- Laborator\Test_04_Multimi\IMG-20250302-WA0015.jpg
