@@ -103,3 +103,40 @@ SELECT
     p2.fid
 FROM Profesor p2 
 WHERE p2.grad = 'conf'
+
+-- poza 81
+
+-- nu s bune raspunsurile lor
+
+SELECT
+    s1.sid,
+    s1.nume,
+    s1.media
+FROM Student s1
+WHERE s1.media NOT BETWEEN 6 AND 7.8
+INTERSECT
+SELECT
+    s2.sid,
+    s2.nume,
+    s2.media
+FROM Student s2 JOIN Contract ct
+                ON s2.sid = ct.sid
+WHERE ct.an = 2021; 
+
+SELECT
+    s2.sid,
+    s2.nume,
+    s2.media
+FROM Student s2 JOIN Contract ct
+                ON s2.sid = ct.sid
+WHERE ct.an = 2021
+MINUS
+SELECT
+    s1.sid,
+    s1.nume,
+    s1.media
+FROM Student s1
+WHERE s1.media BETWEEN 6 AND 7.8
+
+
+-- Laborator\Test_04_Multimi\IMG-20250302-WA0082.jpg
