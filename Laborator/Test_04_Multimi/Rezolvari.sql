@@ -89,3 +89,17 @@ SELECT
 FROM Curs c2 JOIN Facultate f
              ON c2.fid = f.fid
 WHERE f.fid = 'AC';
+
+-- Laborator\Test_04_Multimi\IMG-20250302-WA0078.jpg
+
+SELECT
+    p1.pid,
+    p1.fid
+FROM Profesor p1 
+WHERE p1.datan < '01/01/1980'
+MINUS
+SELECT
+    p2.pid,
+    p2.fid
+FROM Profesor p2 
+WHERE p2.grad = 'conf'
