@@ -49,3 +49,21 @@ FROM Curs c2 JOIN Profesor p
 WHERE p.grad = 'conf';
 
 -- Laborator\Test_04_Multimi\IMG-20250302-WA0015.jpg
+
+-- la fel cu poza 80
+
+-- 2 : CRS13	Logica fuzzy
+
+-- 4 : CRS18	Logica digitala
+
+SELECT
+    c1.cid,
+    c1.titlu
+FROM Curs c1 
+WHERE c1.pid IN (SELECT p.pid FROM Profesor p WHERE substr(p.nume, instr(p.nume, ' ') + 1) LIKE 'P%')
+INTERSECT
+SELECT
+    c2.cid,
+    c2.titlu
+FROM Curs c2 
+WHERE c2.fid IN (SELECT f.fid FROM Facultate f WHERE f.fid IN (SELECT s.fid FROM Student s WHERE s.media >= 9));
