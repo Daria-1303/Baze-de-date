@@ -219,12 +219,12 @@ GROUP BY s.an, s.fid
 ORDER BY an;
 
 
-SELECT 
-    f.nume, 
-    s.an,
-    SUM(s.bursa) AS sumaBurse,
-    trunc(AVG(s.bursa), 2) AS medieBurse
-FROM Student s
+-- SELECT 
+--     f.nume, 
+--     s.an,
+--     SUM(s.bursa) AS sumaBurse,
+--     trunc(AVG(s.bursa), 2) AS medieBurse
+-- FROM Student s
 
 -- L7.Ex6. Să se afișeze bursa minimă (>0), medie și maximă a
 -- tuturor studenților care au ore in ziua de 'Luni', indiferent de curs.
