@@ -62,3 +62,15 @@ FROM Student
 WHERE media >= 7 AND media <= 9
 
 -- Laborator\Test_05_agregarea_datelor\IMG-20250302-WA0067.jpg
+
+-- GRAD	    COUNT(PID)
+-- conf	        7
+-- prof	        7
+-- as	        8
+
+SELECT
+    grad,
+    count(pid)
+FROM Profesor
+GROUP BY grad
+HAVING count(pid) > 5 
