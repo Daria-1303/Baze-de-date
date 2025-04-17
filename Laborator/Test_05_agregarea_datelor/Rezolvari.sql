@@ -74,3 +74,25 @@ SELECT
 FROM Profesor
 GROUP BY grad
 HAVING count(pid) > 5 
+
+-- Laborator\Test_05_agregarea_datelor\IMG-20250302-WA0069.jpg
+
+
+-- MIN(DATAN)
+-- 11/18/2000
+
+SELECT
+    min(datan)
+FROM Student
+
+
+-- Laborator\Test_05_agregarea_datelor\IMG-20250302-WA0208.jpg
+
+-- e si mai sus de fapt
+
+-- 17
+
+SELECT
+    count(cid)
+FROM Curs
+WHERE semestru = 1
