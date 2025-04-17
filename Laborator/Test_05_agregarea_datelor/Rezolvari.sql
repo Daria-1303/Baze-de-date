@@ -29,3 +29,36 @@ SELECT
 FROM Contract 
 WHERE semestru = 1
 GROUP BY an
+
+-- Laborator\Test_05_agregarea_datelor\IMG-20250302-WA0011.jpg
+
+-- SUM(NRLOCURI)	ETAJ
+-- 1775	        1
+-- 544	            2
+-- 490	            3
+
+SELECT
+    sum(nrlocuri),
+    etaj
+FROM Sala
+GROUP by etaj
+
+-- Laborator\Test_05_agregarea_datelor\IMG-20250302-WA0065.jpg
+
+-- 17
+
+SELECT
+    count(titlu)
+FROM Curs
+WHERE semestru = 1
+
+-- Laborator\Test_05_agregarea_datelor\IMG-20250302-WA0066.jpg
+
+-- 18
+
+SELECT
+    count(sid) as nrStudenti
+FROM Student
+WHERE media >= 7 AND media <= 9
+
+-- Laborator\Test_05_agregarea_datelor\IMG-20250302-WA0067.jpg
