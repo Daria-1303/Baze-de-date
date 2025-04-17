@@ -16,3 +16,16 @@ WHERE semestru = 2
 GROUP BY an
 
 -- Laborator\Test_05_agregarea_datelor\IMG-20250302-WA0009.jpg
+
+-- 2025	.34
+-- 2024	3.42
+-- 2021	2.38
+-- 2022	4.07
+-- 2023	3.88
+
+SELECT
+    an,
+    trunc(variance(nota), 2)
+FROM Contract 
+WHERE semestru = 1
+GROUP BY an
